@@ -27,7 +27,7 @@ namespace Business_Mayhem
         static public float rugbyLoadBarLength = 1;
 
         //Lemonade Vars
-        static public double lemonadeProfit = 1000;
+        static public double lemonadeProfit = 50000;
         static public double lemonadeeUpgrade = 10;
         static public double lemonLevel = 1;
         static public bool lemonadeLoad = false;
@@ -43,7 +43,7 @@ namespace Business_Mayhem
         static public double rugbyProfit = 50;
         static public double rugbyUpgrade = 5000;
         static public double rugbyLevel = 0;
-        static public bool rugbyFood = false;
+        static public bool hasRugby = false;
         static public bool rugbyLoad = false;
 
         Brush whiteBrush = new SolidBrush(Color.White);
@@ -68,6 +68,13 @@ namespace Business_Mayhem
             {
                 fastFoodUpgradeButton.Text = $"Upgrade for {fastFoodUpgrade.ToString("C")}";
                 fastFoodMoneyLabel.Text = $"{fastFoodProfit.ToString("C")}";
+            }
+
+            rugbyTeamLevelLabel.Text = $"{rugbyLevel}";
+            if (hasRugby == true) // Only run if rugby is unlocked
+            {
+                rugbyTeamUpgradeButton.Text = $"Upgrade for {rugbyUpgrade.ToString("C")}";
+                rugbyTeamMoneyLabel.Text = $"{rugbyProfit.ToString("C")}";
             }
 
             //Checks if lemonade button was clicked
@@ -104,6 +111,23 @@ namespace Business_Mayhem
                 }
             }
 
+            //Checks if rugby button was clicked
+            if (rugbyLoad == true) // Increases loading bar 
+            {
+                if (rugbyLoadBarLength <= 200)
+                {
+                    rugbyTime = oneSecond * rugbyTime;
+                    rugbyTime = 200 / rugbyTime;
+                    rugbyLoadBarLength += rugbyTime;
+                }
+                else // Once loading bar is full run rugby profit
+                {
+                    rugbyLoadBarLength = 0;
+                    rugbyLoad = false;
+                    RugbyTeam.rugbyTeamClick(rugbyProfit);
+                }
+            }
+
             Refresh();
         }
 
@@ -137,6 +161,7 @@ namespace Business_Mayhem
         {
             e.Graphics.FillRectangle(whiteBrush, 280, 120, lemonadeLoadBarLength, 35); //Lemonade Load Bar
             e.Graphics.FillRectangle(whiteBrush, 280, 207, fastFoodLoadBarLength, 35); // Fast Food Load Bar
+            e.Graphics.FillRectangle(whiteBrush, 280, 320, rugbyLoadBarLength, 35); // rugby Load Bar
         }
 
 
@@ -179,9 +204,37 @@ namespace Business_Mayhem
             }
         }
 
+
+        //Check if rugby team upgrade button is clicked
         private void rugbyTeamUpgradeButton_Click(object sender, EventArgs e)
         {
+            if (hasRugby == false) //Checks if rugby team is unlocked or not
+            {
+                if (totalCash >= 100000) //Checks if user can afford to unlock
+                {
+                    hasRugby = true;
+                    rugbyLevel++;
+                    totalCash -= 100000;
+                    rugbyTeamButton.Enabled = true;
+                }
+            }
 
+            if (hasRugby== true) //Checks if rugby is unlocked or not
+            {
+                if (totalCash >= rugbyUpgrade) //Checks if user has enough to upgrade
+                {
+                    RugbyTeam.rugbyTeamUpgradeClick(rugbyUpgrade, rugbyLevel);
+                }
+            }
+        }
+
+        //Checks if rugby button was clicked
+        private void rugbyTeamButton_Click(object sender, EventArgs e)
+        {
+            if (rugbyLoad == false) //Makes sure the button can't be clicked while laod bar goes
+            {
+                rugbyLoad = true;
+            }
         }
     }
 }

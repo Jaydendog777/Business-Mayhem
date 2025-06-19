@@ -166,6 +166,7 @@
             this.rugbyTeamButton.TabIndex = 10;
             this.rugbyTeamButton.Text = "Rugby Team";
             this.rugbyTeamButton.UseVisualStyleBackColor = true;
+            this.rugbyTeamButton.Click += new System.EventHandler(this.rugbyTeamButton_Click);
             // 
             // rugbyTeamMoneyLabel
             // 
@@ -184,7 +185,7 @@
             this.rugbyTeamUpgradeButton.Name = "rugbyTeamUpgradeButton";
             this.rugbyTeamUpgradeButton.Size = new System.Drawing.Size(234, 35);
             this.rugbyTeamUpgradeButton.TabIndex = 12;
-            this.rugbyTeamUpgradeButton.Text = "($5,000) Purchase";
+            this.rugbyTeamUpgradeButton.Text = "($100,000) Purchase";
             this.rugbyTeamUpgradeButton.UseVisualStyleBackColor = true;
             this.rugbyTeamUpgradeButton.Click += new System.EventHandler(this.rugbyTeamUpgradeButton_Click);
             // 
