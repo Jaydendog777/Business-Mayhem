@@ -35,6 +35,8 @@
             this.lemonUpgradeOneCostLabel = new System.Windows.Forms.Label();
             this.fastFoodProfitUpgradeButton = new System.Windows.Forms.Button();
             this.fastFoodUpgradeOneCostLabel = new System.Windows.Forms.Label();
+            this.rugbyTeamProfitUpgradeButton = new System.Windows.Forms.Button();
+            this.rugbyTeamUpgradeOneCostLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // upgradesLabel
@@ -115,12 +117,35 @@
             this.fastFoodUpgradeOneCostLabel.Text = "money";
             this.fastFoodUpgradeOneCostLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // rugbyTeamProfitUpgradeButton
+            // 
+            this.rugbyTeamProfitUpgradeButton.Location = new System.Drawing.Point(665, 156);
+            this.rugbyTeamProfitUpgradeButton.Name = "rugbyTeamProfitUpgradeButton";
+            this.rugbyTeamProfitUpgradeButton.Size = new System.Drawing.Size(215, 95);
+            this.rugbyTeamProfitUpgradeButton.TabIndex = 7;
+            this.rugbyTeamProfitUpgradeButton.Text = "Increase Rugby Team Profit";
+            this.rugbyTeamProfitUpgradeButton.UseVisualStyleBackColor = true;
+            this.rugbyTeamProfitUpgradeButton.Click += new System.EventHandler(this.rugbyTeamProfitUpgradeButton_Click);
+            // 
+            // rugbyTeamUpgradeOneCostLabel
+            // 
+            this.rugbyTeamUpgradeOneCostLabel.BackColor = System.Drawing.Color.Transparent;
+            this.rugbyTeamUpgradeOneCostLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rugbyTeamUpgradeOneCostLabel.Location = new System.Drawing.Point(661, 255);
+            this.rugbyTeamUpgradeOneCostLabel.Name = "rugbyTeamUpgradeOneCostLabel";
+            this.rugbyTeamUpgradeOneCostLabel.Size = new System.Drawing.Size(215, 31);
+            this.rugbyTeamUpgradeOneCostLabel.TabIndex = 8;
+            this.rugbyTeamUpgradeOneCostLabel.Text = "money";
+            this.rugbyTeamUpgradeOneCostLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // UpgradeScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Business_Mayhem.Properties.Resources.Business_Mayhem_Upgrade_Screen__1_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.rugbyTeamUpgradeOneCostLabel);
+            this.Controls.Add(this.rugbyTeamProfitUpgradeButton);
             this.Controls.Add(this.fastFoodUpgradeOneCostLabel);
             this.Controls.Add(this.fastFoodProfitUpgradeButton);
             this.Controls.Add(this.lemonUpgradeOneCostLabel);
@@ -144,5 +169,7 @@
         private System.Windows.Forms.Label lemonUpgradeOneCostLabel;
         private System.Windows.Forms.Button fastFoodProfitUpgradeButton;
         private System.Windows.Forms.Label fastFoodUpgradeOneCostLabel;
+        private System.Windows.Forms.Button rugbyTeamProfitUpgradeButton;
+        private System.Windows.Forms.Label rugbyTeamUpgradeOneCostLabel;
     }
 }

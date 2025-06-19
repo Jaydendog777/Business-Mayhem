@@ -32,7 +32,7 @@ namespace Business_Mayhem
             GameScreen.totalCash -= fastFoodUpgrade;
             GameScreen.fastFoodUpgrade = fastFoodUpgrade * fastFoodUpgradeIncrease * level;
             double x = fastFoodProfit / 4;
-            GameScreen.fastFoodProfit += 1 + x * fastFoodMult;
+            GameScreen.fastFoodProfit += 250 + x * fastFoodMult;
             GameScreen.fastFoodLevel += 1;
         }
     }

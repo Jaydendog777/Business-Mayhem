@@ -15,7 +15,7 @@ namespace Business_Mayhem
         public static double totalCash = 0;
         static public int oneSecond = 50;
         //Lemonade Times
-        static public float lemonadeTime = 50;
+        static public float lemonadeTime = 23;
         static public float lemonadeLoadBarLength = 1;
 
         //FastFood times
@@ -23,25 +23,25 @@ namespace Business_Mayhem
         static public float fastFoodLoadBarLength = 1;
 
         //Rugby times
-        static public float rugbyTime = 10;
+        static public float rugbyTime = 3;
         static public float rugbyLoadBarLength = 1;
 
         //Lemonade Vars
-        static public double lemonadeProfit = 50000;
+        static public double lemonadeProfit = 12472456;
         static public double lemonadeeUpgrade = 10;
         static public double lemonLevel = 1;
         static public bool lemonadeLoad = false;
 
         //Fast Food Vars
-        static public double fastFoodProfit = 50;
+        static public double fastFoodProfit = 250;
         static public double fastFoodUpgrade = 5000;
         static public double fastFoodLevel = 0;
         static public bool hasFastFood = false;
         static public bool fastFoodLoad = false;
 
         //Rugby Team Vars
-        static public double rugbyProfit = 50;
-        static public double rugbyUpgrade = 5000;
+        static public double rugbyProfit = 1000;
+        static public double rugbyUpgrade = 100000;
         static public double rugbyLevel = 0;
         static public bool hasRugby = false;
         static public bool rugbyLoad = false;

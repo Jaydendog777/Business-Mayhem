@@ -33,7 +33,7 @@ namespace Business_Mayhem
             GameScreen.totalCash -= rugbyUpgrade;
             GameScreen.rugbyUpgrade = rugbyUpgrade * rugbyUpgradeIncrease * level;
             double x = rugbyProfit / 4;
-            GameScreen.rugbyProfit += 1 + x * rugbyMult;
+            GameScreen.rugbyProfit += 1000 + x * rugbyMult;
             GameScreen.rugbyLevel += 1;
         }
     }
